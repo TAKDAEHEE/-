@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>미술 퍼포먼스 실습 수업지도안</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Chosen Palette: Warm Neutrals -->
+    <!-- Application Structure Plan: A single-page, vertical-scrolling application. The structure follows the logical flow of the lesson plan: Overview -> Session 1 -> Session 2 -> Session 3 -> Evaluation. A sticky navigation bar allows the teacher to quickly jump between these sections. This linear, yet flexible, structure is ideal for a teacher following a curriculum, as it presents information chronologically while allowing instant access to any part of the plan. Key content like artist examples in Session 1 is made interactive (clickable tabs) to improve engagement and focus. -->
+    <!-- Visualization & Content Choices:
+        - Report Info: Lesson plan sections (objectives, materials, activities, evaluation). Goal: Inform & Guide. Presentation: Structured HTML with semantic tags and Tailwind CSS for clear, readable typography and layout. Interaction: Smooth scrolling via navigation links. Justification: Provides a clean, professional, and easy-to-follow digital version of the lesson plan.
+        - Report Info: Artist examples (Abramović, Beuys, Lee). Goal: Engage & Inform. Presentation: Interactive Tab Component. Interaction: User clicks an artist's name (button), and JS reveals the corresponding artwork description. Justification: This prevents information overload by showing one artist's info at a time and makes the discovery process more active than reading a static list. Library/Method: Vanilla JS for toggling visibility, Tailwind CSS for styling.
+        - CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <title>퍼포먼스 미술 수업 지도안</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-indigo-50 text-slate-800">
+
+    <header class="bg-white shadow-md py-6">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-3xl font-bold text-indigo-800">🙋‍♀️ 🎭 중학교 퍼포먼스 미술 수업 지도안 🎭 🙋‍♂️</h1>
+            <p class="text-slate-600 mt-2">중학교 2학년 대상 | 3차시 이론 및 실습</p>
+        </div>
+    </header>
+
+    <nav class="sticky top-0 bg-white/80 backdrop-blur-sm shadow-sm z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-center items-center space-x-2 sm:space-x-4 py-3 text-sm sm:text-base">
+                <a href="#overview" class="font-medium text-slate-700 hover:text-indigo-600 transition">수업 순서</a>
+                <a href="#session1" class="font-medium text-slate-700 hover:text-indigo-600 transition">1차시</a>
+                <a href="#session2" class="font-medium text-slate-700 hover:text-indigo-600 transition">2차시</a>
+                <a href="#session3" class="font-medium text-slate-700 hover:text-indigo-600 transition">3차시</a>
+                <a href="#evaluation" class="font-medium text-slate-700 hover:text-indigo-600 transition">평가 계획</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto p-4 sm:p-6 md:p-8">
+
+        <section id="overview" class="mb-12 bg-white p-6 rounded-xl shadow-lg">
+            <h2 class="text-2xl font-bold text-indigo-700 border-b-2 border-indigo-200 pb-2 mb-4">🎨 학습 목표</h2>
+            <ul class="list-none space-y-2 text-slate-700">
+                <li class="flex items-start"><span class="mr-2 text-indigo-500">✔</span> <span>퍼포먼스 미술의 개념과 주요 특징을 이해하고 설명할 수 있다.</span></li>
+                <li class="flex items-start"><span class="mr-2 text-indigo-500">✔</span> <span>유명한 퍼포먼스 미술 작가와 작품을 알고 감상할 수 있다.</span></li>
+                <li class="flex items-start"><span class="mr-2 text-indigo-500">✔</span> <span>자신의 생각과 감정을 몸으로 표현하는 퍼포먼스 미술을 기획하고 실행할 수 있다.</span></li>
+                <li class="flex items-start"><span class="mr-2 text-indigo-500">✔</span> <span>미술을 통해 자기 자신과 세상에 대한 새로운 시각을 가질 수 있다.</span></li>
+            </ul>
+  
+           
+        </section>
+
+        <div id="sessions" class="space-y-12">
+            
+            <section id="session1" class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl">
+                <h2 class="text-2xl font-bold text-indigo-700">1차시: "몸으로 하는 이야기"</h2>
+                <p class="text-slate-500 mb-6">퍼포먼스 미술의 시작과 특징, 작품 감상</p>
+
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="font-bold text-lg text-slate-700">📋 준비물</h3>
+                        <p class="text-slate-600">필기도구, 그림(영상) 감상 시트</p>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg text-slate-700">📝 수업 내용</h3>
+                        <div class="space-y-4 mt-2 pl-4 border-l-4 border-indigo-200">
+                            <details class="group">
+                                <summary class="font-semibold cursor-pointer text-slate-600 group-hover:text-indigo-600">도입 (10분)</summary>
+                                <p class="mt-2 text-slate-600 pl-4">"여러분, 혹시 길거리에서 멋진 마임을 보거나, 갑자기 깜짝 놀랄 만한 플래시몹을 본 적 있나요? 그런 것들도 어쩌면 미술이 될 수 있다는 걸 아나요?"</p>
+                                <p class="mt-1 text-slate-600 pl-4">"오늘은 그림이나 조각처럼 가만히 있는 미술이 아니라, '움직이고, 소리 내고, 뭔가 벌어지는' 미술에 대해 이야기해 볼 거예요!"</p>
+                            </details>
+                            <details class="group" open>
+                                <summary class="font-semibold cursor-pointer text-slate-600 group-hover:text-indigo-600">전개 (30분)</summary>
+                                <div class="mt-2 pl-4 space-y-4">
+                                    <div class="bg-indigo-50 p-4 rounded-md">
+                                        <h4 class="font-semibold">파인만 기법 1: 퍼포먼스 미술은 왜 생겨났을까? '미술은 꼭 액자에 걸려야 해?'</h4>
+                                        <p class="mt-2 text-slate-600">"옛날 옛날에는 미술 작품이 주로 그림이나 조각이었어요. 미술관에 가서 조용히 감상하는 게 전부였죠. 그런데 어떤 예술가들은 생각했어요. '미술이 꼭 그래야만 할까?'"</p>
+                                        <p class="mt-1 text-slate-600">"세상에 점점 새로운 일들이 많아지고, 사람들의 생각도 복잡해지면서, 그림만으로는 다 표현할 수 없는 것들이 생겨났어요. 그래서 예술가들은 자신의 '몸'을 사용해서 메시지를 전달하기 시작했어요. 마치 배우가 연극을 하듯이, 가수들이 무대에서 노래를 부르듯이요!"</p>
+                                        <div class="mt-3 flex space-x-2">
+                                            <span class="bg-indigo-200 text-indigo-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">행위</span>
+                                            <span class="bg-indigo-200 text-indigo-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">시간</span>
+                                            <span class="bg-indigo-200 text-indigo-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">관객 참여</span>
+                                        </div>
+                                    </div>
+                                    <div class="bg-indigo-50 p-4 rounded-md">
+                                        <h4 class="font-semibold">파인만 기법 2: '이게 미술이라고?' 충격과 감동의 퍼포먼스 작품들!</h4>
+                                        <p class="mt-2 text-slate-600">"자, 이제 실제로 어떤 퍼포먼스 미술 작품들이 있었는지 살펴볼까요? 아마 깜짝 놀랄 만한 작품들도 있을 거예요!"</p>
+                                        <div id="artist-spotlight" class="mt-4">
+                                            <div class="flex border-b border-indigo-200">
+                                                <button data-artist="marina" class="artist-tab py-2 px-4 font-semibold rounded-t-lg transition-all active-tab">마리나 아브라모비치</button>
+                                                <button data-artist="joseph" class="artist-tab py-2 px-4 font-semibold rounded-t-lg transition-all inactive-tab">요셉 보이스</button>
+                                                <button data-artist="lee" class="artist-tab py-2 px-4 font-semibold rounded-t-lg transition-all inactive-tab">이건용</button>
+                                            </div>
+                                            <div class="pt-4">
+                                                <div id="marina" class="artist-content">
+                                                    <p class="font-bold">리듬 0 (Rhythm 0)</p>
+                                                    <p class="text-slate-600 mt-1">"이 작가는 아무것도 하지 않고 사람들 앞에 섰어요. 그리고 사람들한테 자기 몸에 놓인 물건들(장미, 깃털, 칼, 총 등)을 마음대로 사용해도 좋다고 했죠. 과연 사람들은 이 작가에게 어떻게 했을까요? 이 작품은 인간의 본성과 폭력성을 보여주는 실험이었어요."</p>
+                                                </div>
+                                                <div id="joseph" class="artist-content hidden">
+                                                    <p class="font-bold">죽은 토끼에게 어떻게 그림을 설명할 것인가</p>
+                                                    <p class="text-slate-600 mt-1">"이 작가는 얼굴에 꿀과 금박을 바르고 죽은 토끼를 안고 미술관을 걸어 다녔어요. 그러면서 죽은 토끼에게 그림을 설명했죠. 왜 그랬을까요? 어쩌면 예술이라는 게 살아있는 사람에게도 어려운 것처럼, 죽은 토끼에게도 설명하기 어려운 거 아닐까요?"</p>
+                                                </div>
+                                                <div id="lee" class="artist-content hidden">
+                                                    <p class="font-bold">달팽이 걸음</p>
+                                                    <p class="text-slate-600 mt-1">"우리나라 작가인데, 눈을 감고 온몸에 물감을 묻힌 채 천천히, 아주 천천히 바닥에 선을 그리면서 움직였어요. 마치 달팽이가 지나간 자국처럼요. 왜 이렇게 느리게 움직였을까요? 바쁜 세상 속에서 우리가 놓치고 사는 것들을 생각해보라고 하는 건 아닐까요?"</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </details>
+                             <details class="group">
+                                <summary class="font-semibold cursor-pointer text-slate-600 group-hover:text-indigo-600">정리 (5분)</summary>
+                                <p class="mt-2 text-slate-600 pl-4">오늘 배운 퍼포먼스 미술의 특징과 작품들을 다시 한번 정리하고 질문 받기.</p>
+                                <p class="mt-1 text-slate-600 pl-4">"다음 시간에는 우리가 직접 퍼포먼스 작가가 되어 몸으로 이야기를 표현해볼 거예요!"</p>
+                            </details>
+                        </div>
+                    </div>
+                     <div>
+                        <h3 class="font-bold text-lg text-slate-700">📖 과제</h3>
+                        <p class="text-slate-600">내가 몸으로 표현하고 싶은 '감정'이나 '생각' 한 가지를 정하고, 그것을 어떻게 몸으로 표현할 수 있을지 간단하게 아이디어 스케치(몸의 자세, 표정, 도구 활용 등) 해오기.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="session2" class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl">
+                <h2 class="text-2xl font-bold text-indigo-700">2차시: "내 몸이 곧 예술!"</h2>
+                <p class="text-slate-500 mb-6">퍼포먼스 미술 기획 및 실습</p>
+                 <div class="space-y-6">
+                    <div>
+                        <h3 class="font-bold text-lg text-slate-700">📋 준비물</h3>
+                        <p class="text-slate-600">편안한 복장, 1차시 과제물, 개인별 소품 (필요시), 카메라 (영상 기록용)</p>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg text-slate-700">📝 수업 내용</h3>
+                        <div class="space-y-4 mt-2 pl-4 border-l-4 border-indigo-200">
+                             <details class="group">
+                                <summary class="font-semibold cursor-pointer text-slate-600 group-hover:text-indigo-600">도입 (10분)</summary>
+                                <p class="mt-2 text-slate-600 pl-4">"지난 시간에 우리는 몸으로 예술을 표현하는 퍼포먼스 미술에 대해 알아봤어요. 오늘은 여러분이 직접 퍼포먼스 작가가 되어볼 거예요!"</p>
+                                <p class="mt-1 text-slate-600 pl-4">학생들이 해온 '몸으로 표현하고 싶은 감정/생각' 아이디어를 몇 명 발표하게 하고 서로 공유하며 격려하기.</p>
+                            </details>
+                             <details class="group" open>
+                                <summary class="font-semibold cursor-pointer text-slate-600 group-hover:text-indigo-600">전개 (30분)</summary>
+                                <div class="mt-2 pl-4 space-y-4">
+                                     <div class="bg-indigo-50 p-4 rounded-md">
+                                        <h4 class="font-semibold">파인만 기법 3: 내 몸으로 메시지 보내기!</h4>
+                                        <p class="mt-2 text-slate-600">"우리는 말을 하지 않아도 몸으로 많은 이야기를 할 수 있어요. 슬프면 어깨가 축 처지고, 기쁘면 방방 뛰고, 화나면 주먹을 꽉 쥐죠? 퍼포먼스 미술은 바로 이런 몸의 언어를 사용하는 거예요!"</p>
+                                        <p class="mt-1 text-slate-600">"여러분이 표현하고 싶은 감정이나 생각을 어떻게 하면 다른 사람에게 가장 잘 전달할 수 있을까요? 마치 무대 위에서 연기하듯이, 나만의 메시지를 몸으로 보내는 거예요."</p>
+                                    </div>
+                                    <div class="bg-indigo-50 p-4 rounded-md">
+                                        <h4 class="font-semibold">활동: '내 몸의 메시지' - 개인/모둠 퍼포먼스 기획 및 연습</h4>
+                                        <ul class="list-disc list-inside mt-2 space-y-2 text-slate-600">
+                                            <li><b>개인 작업:</b> 각자 자신이 표현하고자 하는 감정이나 생각에 집중하여 몸의 움직임, 표정, 간단한 소품 활용 등을 구체화한다. (예: '답답함'을 표현하기 위해 박스 안에 들어가 웅크리고 있기)</li>
+                                            <li><b>모둠 구성:</b> 2~3인 1모둠으로 구성하여 서로의 아이디어를 공유하고, 각자의 개인 퍼포먼스를 연결하거나 하나의 주제로 공동 퍼포먼스를 기획한다.</li>
+                                            <li><b>연습 시간:</b> 퍼포먼스를 실제로 시연해보고, 서로 피드백을 주고받으며 개선하는 시간을 갖는다.</li>
+                                            <li>필요에 따라 휴대폰으로 연습 장면을 촬영하여 움직임을 점검하도록 지도.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </details>
+                             <details class="group">
+                                <summary class="font-semibold cursor-pointer text-slate-600 group-hover:text-indigo-600">정리 (5분)</summary>
+                                <p class="mt-2 text-slate-600 pl-4">각 모둠별로 간단히 오늘 어떤 퍼포먼스를 기획하고 연습했는지 이야기 나누기.</p>
+                                 <p class="mt-1 text-slate-600 pl-4">"다음 시간에는 오늘 연습한 멋진 퍼포먼스들을 친구들 앞에서 발표하고 서로 감상하는 시간을 가질 거예요!"</p>
+                            </details>
+                        </div>
+                    </div>
+                     <div>
+                        <h3 class="font-bold text-lg text-slate-700">📖 과제</h3>
+                        <p class="text-slate-600">없음 (작품 이어서 제작 및 연습)</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="session3" class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl">
+                <h2 class="text-2xl font-bold text-indigo-700">3차시: "우리들의 움직이는 미술관"</h2>
+                <p class="text-slate-500 mb-6">퍼포먼스 작품 발표 및 감상</p>
+                 <div class="space-y-6">
+                    <div>
+                        <h3 class="font-bold text-lg text-slate-700">📋 준비물</h3>
+                        <p class="text-slate-600">2차시 완성된 퍼포먼스 작품을 위한 준비물 (소품, 의상 등), 카메라 (영상 기록용)</p>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg text-slate-700">📝 수업 내용</h3>
+                        <div class="space-y-4 mt-2 pl-4 border-l-4 border-indigo-200">
+                            <details class="group">
+                                <summary class="font-semibold cursor-pointer text-slate-600 group-hover:text-indigo-600">도입 (10분)</summary>
+                                <p class="mt-2 text-slate-600 pl-4">"드디어 여러분이 직접 만든 멋진 퍼포먼스 미술 작품들을 모두에게 보여줄 시간이에요! 오늘은 이 교실이 우리만의 특별한 '움직이는 미술관'이 될 거예요!"</p>
+                            </details>
+                            <details class="group" open>
+                                <summary class="font-semibold cursor-pointer text-slate-600 group-hover:text-indigo-600">전개 (30분)</summary>
+                                 <div class="mt-2 pl-4">
+                                    <h4 class="font-semibold">작품 발표 및 감상 (모둠별 진행)</h4>
+                                     <ul class="list-disc list-inside mt-2 space-y-2 text-slate-600">
+                                        <li>각 모둠은 준비한 퍼포먼스를 발표한다. (각 모둠당 3~5분 내외, 퍼포먼스 후 간단한 설명 포함)</li>
+                                        <li>발표하는 동안 다른 학생들은 조용히 감상하고, 퍼포먼스 영상을 촬영하여 기록한다.</li>
+                                        <li>모든 발표가 끝난 후, 작품 감상 및 피드백 시간을 갖는다. (질문, 느낀 점, 좋았던 점 등 자유롭게 이야기 나누기)</li>
+                                        <li>교사는 학생들이 퍼포먼스에서 어떤 메시지를 느꼈는지, 어떤 점이 인상 깊었는지 질문하고, 현대미술의 특징과 연관 지어 질문 및 피드백 제공.</li>
+                                    </ul>
+                                </div>
+                            </details>
+                             <details class="group">
+                                <summary class="font-semibold cursor-pointer text-slate-600 group-hover:text-indigo-600">정리 (5분)</summary>
+                                <div class="mt-2 pl-4">
+                                     <h4 class="font-semibold">미술은 '살아있는 것'!</h4>
+                                     <p class="mt-2 text-slate-600">"여러분, 퍼포먼스 미술은 정답이 없어요. 정해진 틀도 없죠. 여러분의 생각과 감정을 몸으로 자유롭게 표현한 것이 가장 중요하답니다."</p>
+                                     <p class="mt-1 text-slate-600">"오늘 우리가 몸으로 보여준 이 모든 행위들이 바로 '살아있는 미술'이에요. 미술은 꼭 미술관에만 있는 것이 아니라, 우리의 몸짓 하나하나, 생각 하나하나에 담겨있다는 것을 잊지 마세요!"</p>
+                                     <p class="mt-2 text-slate-600">수업 소감 나누기 및 마무리.</p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <section id="evaluation" class="mt-12 bg-white p-6 rounded-xl shadow-lg">
+            <h2 class="text-2xl font-bold text-indigo-700 border-b-2 border-indigo-200 pb-2 mb-4">💡 평가 계획</h2>
+            <ul class="list-none space-y-3 text-slate-700">
+                 <li class="flex items-start"><span class="mr-3 mt-1 text-indigo-500 font-bold">참여도</span> <span class="flex-1">각 차시 수업에 적극적으로 참여하고 탐구하는 태도 (관찰 평가)</span></li>
+                 <li class="flex items-start"><span class="mr-3 mt-1 text-indigo-500 font-bold">기획 과정</span> <span class="flex-1">아이디어의 참신성, 몸의 언어 활용 능력, 메시지 전달력 (과정 평가)</span></li>
+                 <li class="flex items-start"><span class="mr-3 mt-1 text-indigo-500 font-bold">실행</span> <span class="flex-1">표현력, 몰입도, 다른 학생들과의 협력 (결과물 평가 및 상호 평가)</span></li>
+                 <li class="flex items-start"><span class="mr-3 mt-1 text-indigo-500 font-bold">발표/감상</span> <span class="flex-1">자신의 생각을 명확하게 표현하고 다른 사람의 의견을 경청하는 태도 (발표 및 상호 평가)</span></li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer class="bg-indigo-800 text-white mt-12 py-8 text-center">
+        <div class="container mx-auto px-4">
+            <p class="font-bold text-lg">🙋‍♀️ 혹시 더 궁금한 점이 있나요?</p>
+            <p class="mt-2 text-indigo-200">언제든지 선생님에게 질문해주세요! 미술은 정답이 없으니, 여러분의 자유로운 생각과 상상을 마음껏 펼쳐보아요! 😊</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
